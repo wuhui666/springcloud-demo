@@ -1,0 +1,26 @@
+server:
+  port: 9001
+spring:
+  application:
+    name: zuul-gateway
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+  instance:
+    instance-id: zuul-gateway-9001
+    prefer-ip-address: false #显示服务ip
+info: #配置服务的info
+  app.name: springcloud-demo
+  company.name: zbh
+  build.artifactId: $project.artifactId$
+  build.version: $project.version$
+# 配置路由规则
+zuul:
+  ignored-services: dept-provider # 不允许用微服务名访问了，如果禁用所有的，可以使用 "*"
+  routes:
+    prefix: /zuul # 给路由加一个统一的前缀
+    # 如下指定新的映射
+    zbhprovider:
+      serviceId: dept-provider
+      path: /zbhprovider/**

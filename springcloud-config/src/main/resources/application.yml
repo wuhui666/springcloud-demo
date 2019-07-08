@@ -1,0 +1,27 @@
+
+spring:
+  application:
+    name: config-server
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/wuhui666/springcloud_config.git
+          username: wuhui666
+          password: 19980331zbh
+  rabbitmq:
+    port: 5672
+    username: guest
+    password: guest
+    host: 192.168.1.102
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+server:
+  port: 8003
+#使得/bus/refresh可以访问
+management:
+  security:
+    enabled: false

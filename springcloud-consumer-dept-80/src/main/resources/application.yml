@@ -1,0 +1,12 @@
+server:
+  port: 80
+# feign和ribbon结合，指定策略。feign默认的是轮询的策略，这里的配置可以自定义
+#也可以配置类指定策略
+DEPT-PROVIDER:
+  ribbon:
+    NFLoadBalancerRuleClassName: com.netflix.loadbalancer.RoundRobinRule
+    #解决feign超时
+    ReadTimeout: 60000
+    ConnectTimeout: 60000
+    MaxAutoRetries: 0
+    MaxAutoRetriesNextServer: 1

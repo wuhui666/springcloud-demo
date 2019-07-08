@@ -1,0 +1,16 @@
+spring:
+  cloud:
+    config:
+      uri: http://localhost:8003  # 服务启动后，去找config-server找配置文件
+      name: application  # 从github上读取的资源名称，不要加 .yml后缀
+      label: master # master分支
+      profile: pro  # 环境
+  application:
+    name: config-client
+  rabbitmq:
+    port: 5672
+    username: guest
+    password: guest
+    host: 192.168.1.102
+server:
+  port: 8004

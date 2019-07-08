@@ -1,0 +1,32 @@
+server:
+  port: 8001
+spring:
+  datasource:
+    username: root
+    password: admin
+    url: jdbc:mysql://localhost:3306/springcloud?serverTimezone=UTC
+    driver-class-name: com.mysql.jdbc.Driver
+    type: com.alibaba.druid.pool.DruidDataSource
+  application:
+    name: dept-provider
+mybatis:
+  mapper-locations: mybatis/mappers/*.xml
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+  instance:
+    instance-id: my-id-8001
+    prefer-ip-address: false #显示服务ip
+info: #配置服务的info
+  app.name: springcloud-demo
+  company.name: zbh
+  build.artifactId: $project.artifactId$
+  build.version: $project.version$
+# 配置hystrix dashboard的url访问
+# 开启指标流端点
+management:
+  endpoints:
+    web:
+      exposure:
+        include: hystrix.stream

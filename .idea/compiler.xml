@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="springcloud-api" />
+        <module name="springcloud-config" />
+        <module name="springcloud-consumer-dept-80" />
+        <module name="springcloud-eureka-server-8761" />
+        <module name="springcloud-eureka-server-8761 (1)" />
+        <module name="springcloud-eureka-server-8761 (2)" />
+        <module name="springcloud-provider-dept-8001" />
+        <module name="springcloud-provider-dept-8002" />
+        <module name="springcloud-zuul" />
+        <module name="springcloudconfig-client" />
+      </profile>
+    </annotationProcessing>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="springcloud-eureka-server-8761" options="" />
+      <module name="springcloud-zuul" options="" />
+    </option>
+  </component>
+</project>
